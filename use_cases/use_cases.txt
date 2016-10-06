@@ -13,3 +13,4 @@ Use Cases
   As a user, I want to be able to check individual songs that I wish to add to my playlist, or select the "check all" button for convenience. After confirming that I checked off all the desired songs, I want to be able to add them to my playlist, or create a new playlist consisting of these songs. 
 
 5. User can confirm their additions and save the playlist (Spencer)
+The user will want to be able to confirm the changes that they made and then save the playlist to spotify.
