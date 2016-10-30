@@ -29,7 +29,10 @@ app.controller('myCtrl', function($scope, $http) {
 
             //display all the artists 
     		for (i = 0; i < artists.length; i++) {
-    			document.getElementById('jsonResponse').innerHTML += '<div class="div-conatiner">';
+                if (i == 0) {
+                    document.getElementById('jsonResponse').innerHTML += '<h2>Artists</h2>';
+                }
+    			document.getElementById('jsonResponse').innerHTML += '<div class="div-container">';
     			document.getElementById('jsonResponse').innerHTML += '<p class="p-name"> Artist: ' + artists[i].name + '</p>';
     			document.getElementById('jsonResponse').innerHTML += '<a href='+artists[i].uri+'>Open in Spotify</a> <br>';
                 document.getElementById('jsonResponse').innerHTML += '<a target="_blank" href='+artists[i].external_urls.spotify+'>Open in browser</a>';
@@ -38,7 +41,10 @@ app.controller('myCtrl', function($scope, $http) {
 
             //display all the tracks & their respective artists
     		for (i = 0; i < tracks.length; i++) {
-    			document.getElementById('jsonResponse').innerHTML += '<div class="div-conatiner">';
+                if (i == 0) {
+                    document.getElementById('jsonResponse').innerHTML += '<h2>Tracks</h2>';
+                }
+    			document.getElementById('jsonResponse').innerHTML += '<div class="div-container">';
     			document.getElementById('jsonResponse').innerHTML += '<p class="p-name"> Track: ' + tracks[i].name + ' by ' + tracks[i].artists[0].name + '</p>';
     			document.getElementById('jsonResponse').innerHTML += '<a href='+tracks[i].uri+'>Open in Spotify</a> <br>';
                 document.getElementById('jsonResponse').innerHTML += '<a target="_blank" href='+tracks[i].external_urls.spotify+'>Open in browser</a>';
