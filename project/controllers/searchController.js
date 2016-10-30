@@ -30,14 +30,16 @@ app.controller('myCtrl', function($scope, $http) {
     		for (i = 0; i < artists.length; i++) {
     			document.getElementById('jsonResponse').innerHTML += '<div class="div-conatiner">';
     			document.getElementById('jsonResponse').innerHTML += '<p class="p-name"> Artist: ' + artists[i].name + '</p>';
-    			document.getElementById('jsonResponse').innerHTML += '<a href='+artists[i].uri+'>Found Here</a>';
+    			document.getElementById('jsonResponse').innerHTML += '<a href='+artists[i].uri+'>Open in Spotify</a> <br>';
+                document.getElementById('jsonResponse').innerHTML += '<a target="_blank" href='+artists[i].external_urls.spotify+'>Open in browser</a>';
     			document.getElementById('jsonResponse').innerHTML += '</div>';
     		}
 
     		for (i = 0; i < tracks.length; i++) {
     			document.getElementById('jsonResponse').innerHTML += '<div class="div-conatiner">';
     			document.getElementById('jsonResponse').innerHTML += '<p class="p-name"> Track: ' + tracks[i].name + ' by ' + tracks[i].artists[0].name + '</p>';
-    			document.getElementById('jsonResponse').innerHTML += '<a href='+tracks[i].uri+'>Found Here</a>';
+    			document.getElementById('jsonResponse').innerHTML += '<a href='+tracks[i].uri+'>Open in Spotify</a> <br>';
+                document.getElementById('jsonResponse').innerHTML += '<a target="_blank" href='+tracks[i].external_urls.spotify+'>Open in browser</a>';
     			document.getElementById('jsonResponse').innerHTML += '</div>';
     		}
     	});
