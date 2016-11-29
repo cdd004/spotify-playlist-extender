@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<script src="/javascripts/searchController.js"></script>
+
+<title>
+  Spotify Playlist Extender
+</title>
+
+<link rel="stylesheet" href="../css/styles.css">
+
+<h1>Spotify Playlist Extender</h1>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput"><br>
+  User Input: {{userInput}}<br>
+  <button ng-click="performSearch()">Search</button>
+  <br>
+  <br>
+    <!-- Response: {{response_unpack.data.artists[0].name}} -->
+
+    <div id="jsonResponse">
+    </div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
