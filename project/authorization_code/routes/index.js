@@ -20,6 +20,7 @@ router.get('/searches', function(req, res, next) {
 /* post a performed search into mongo db */
 router.post('/searches', function(req, res, next) {
 	var search = new Search(req.body);
+	console.log('req.body = ' + req.body);
 
 	search.save(function(err, search) {
 		if(err) {return next(err);}

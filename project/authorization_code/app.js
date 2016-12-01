@@ -16,8 +16,8 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var client_id = 'STUFF'; // Your client id
-var client_secret = 'STUFF'; // Your secret
+var client_id = 'cbfc085ebe724aa4b7191f7065c6b06e'; // Your client id
+var client_secret = 'ccafaae044144ed382889fcc816f0c36'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 //tell node to connect to local database on start
@@ -70,6 +70,10 @@ var stateKey = 'spotify_auth_state';
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use('/', index);
 
 app.get('/login', function(req, res) {

@@ -45,7 +45,12 @@ app.controller('myCtrl', function($scope, $http) {
                 console.log('failed');
             }
 
-            data = $scope.userInput;
+            var data = $scope.userInput;
+            console.log("data = " + data);
+            // $http(
+            //     url = "/searches/" + data,
+            //     method = "POST"
+            // ).then(scb,ecb);
             $http.post('/searches', {searchfield: data}).then(scb, ecb);
 
 
