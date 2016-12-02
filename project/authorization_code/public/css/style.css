@@ -407,6 +407,40 @@
 	    column-rule-style: solid;
 	}
 
+	.login_button {
+		margin-bottom: 50px;
+		background-color: #4CAF50;
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    cursor: pointer;
+	    border-radius: 25px;
+	}
+
+	/* Animations for ng-show and ng-hide */
+
+	.animate-show {
+		line-height: 20px;
+		opacity: 1;
+		padding: 10px;
+		border: 1px solid black;
+		background: white;
+	}
+
+	.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+		transition: all linear 0.5s;
+	}
+
+	.animate-show.ng-hide {
+        line-height: 0;
+        opacity: 0;
+        padding: 0 10px;
+	}
+
 /* Box */
 
 	.box {

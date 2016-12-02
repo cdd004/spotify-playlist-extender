@@ -18,6 +18,8 @@ app.controller('myCtrl', function($scope, $http) {
 
     $scope.toggleStart = function() {
         $scope.start = false;
+        console.log('start has been toggled!');
+        console.log("$scope.start = " + $scope.start);
     }
 
     $scope.clearSearch = function() {

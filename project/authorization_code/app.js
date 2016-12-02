@@ -6,7 +6,6 @@
  * For more information, read
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
-
 var express = require('express'); // Express web server framework
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -79,6 +78,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 
 app.get('/login', function(req, res) {
+
+  console.log('inside app.get("/login")');
 
   var state = generateRandomString(16);
   res.cookie(stateKey, state);

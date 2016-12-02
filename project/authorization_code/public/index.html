@@ -6,6 +6,8 @@
 -->
 <html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
 <head>
   <meta charset="UTF-8">
@@ -28,11 +30,42 @@
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
-    <div ng-show="start">
+<div>
+  <script src="js/controllers/searchController.js"></script>
+   <body class="landing">
+
+   <div id="loggedin">
+    <div id="user-profile">
+    </div>
+    <div id="oauth">
+    </div>
+    <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+      <a href="/login" class="btn btn-primary">Log out</a>
+    </div>
+
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">Spotify Enhancer</a></h1>
+        <nav id="nav">
+           <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Elements</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <!-- Banner -->
+  <!-- <div ng-app="myApp" ng-controller="myCtrl"> -->
+  <section id="banner">
+
+
+    <div>
         <div class="container">
-          <div id="login">
-            <h1>Welcome! Please log in</h1>
-            <button href = "/login" ng-click="toggleStart()" class="btn btn-primary">Login with Spotify</button>
+          <div id="login" ng-show="start">
+            <h1 style="color: white;">Welcome! Please log in</h1>
+            <a class="login_button" href = "/login" class="btn btn-primary" ng-click="toggleStart()">Login with Spotify</a>
 
             <!-- <a href="/login" class="btn btn-primary" ng-click="toggleStart()">Log in with Spotify</a> -->
           </div>
@@ -49,43 +82,14 @@
         </div>
     </div>
 
-<div ng-hide="start">
-  <script src="js/controllers/searchController.js"></script>
-   <body class="landing">
-
-   <div id="loggedin">
-    <div id="user-profile">
-    </div>
-    <div id="oauth">
-    </div>
-    <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
-    <a href="/login" class="btn btn-primary">Log out</a>
-    </div>
-
-
-    <!-- Header -->
-    <header id="header">
-        <h1><a href="index.html">Spotify Enhancer</a></h1>
-        <nav id="nav">
-           <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="generic.html">Generic</a></li>
-              <li><a href="elements.html">Elements</a></li>
-          </ul>
-      </nav>
-  </header>
-
-  <!-- Banner -->
-  <!-- <div ng-app="myApp" ng-controller="myCtrl"> -->
-  <section id="banner">
     <h2>Spotify Enhancer</h2>
     <p>Discover new music | Expand your personal library</p>
     <ul class="actions">
         <li>
-            <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput">
+            <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput" ng-hide="start">
         </li>
         <li>
-          <button ng-click="performSearch()" class="button small">Search</button>
+          <button ng-click="performSearch()" class="button small" ng-hide="start">Search</button>
       </li>
   </ul>
 
@@ -179,10 +183,10 @@
 </footer>
 
 <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
+      <!-- <h1>Logged in as {{display_name}}</h1> -->
       <div class="media">
         <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
+          <!-- <img class="media-object" width="150" src="{{images.0.url}}" /> -->
         </div>
         <div class="media-body">
           <dl class="dl-horizontal">
