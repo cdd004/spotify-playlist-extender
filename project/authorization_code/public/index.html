@@ -37,11 +37,13 @@
    <div id="loggedin">
     <div id="user-profile">
     </div>
-    <div id="oauth">
+    <!-- <div id="oauth">
+    </div> -->
+    <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
+      <!-- <a href="/login" class="btn btn-primary">Log out</a> -->
     </div>
-    <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
-      <a href="/login" class="btn btn-primary">Log out</a>
-    </div>
+
+    <!-- <div id="oauth"></div> -->
 
 
     <!-- Header -->
@@ -63,7 +65,7 @@
 
     <div>
         <div class="container">
-          <div id="login" ng-show="start">
+          <div id="login">
             <h1 style="color: white;">Welcome! Please log in</h1>
             <a class="login_button" href = "/login" class="btn btn-primary" ng-click="toggleStart()">Login with Spotify</a>
 
@@ -82,22 +84,48 @@
         </div>
     </div>
 
+
     <h2>Spotify Enhancer</h2>
     <p>Discover new music | Expand your personal library</p>
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <h1>Welcome, {{display_name}}</h1>
+    </script>
+
+
+
     <ul class="actions">
         <li>
-            <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput" ng-hide="start">
+            <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput">
         </li>
         <li>
-          <button ng-click="performSearch()" class="button small" ng-hide="start">Search</button>
+          <button ng-click="performSearch()" class="button small">Search</button>
       </li>
-  </ul>
+    </ul>
 
 </section>
 
-<div class="jsonResponse">
+<div class="jsonResponse_artist" ng-repeat="a in artists">
     <!-- {{userInput}} -->
+    <div>
+    Artist: {{a.name}} <br>
+    <a href={{a.uri}}> <img src="../../images/spotify-link.png" width="25px" height="25px"> </a>
+    <a target="_blank" href={{a.external_urls.spotify}}> <img src="../../images/browser-link.png" width="25px" height="25px"> </a>
+    </div>
+
 </div>
+
+  <div class="jsonResponse_tracks" ng-repeat="t in tracks">
+    <div>
+      Track: {{t.name}} by {{t.artists[0].name}} <br>
+      <a href={{t.uri}}> <img src="../../images/spotify-link.png" width="25px" height="25px"> </a>
+      <a target="_blank" href={{t.external_urls.spotify}}> <img src="../../images/browser-link.png" width="25px" height="25px"> </a>
+      <a ng-click="getSimilar(t.name, t.artists[0].name)"> <img src="../../images/similar-link.png" width="25px" height="25px"> </a>
+    </div>
+  </div>
+
+
+
 </div>
 
 <!-- One -->
@@ -182,25 +210,7 @@
 </div>
 </footer>
 
-<script id="user-profile-template" type="text/x-handlebars-template">
-      <!-- <h1>Logged in as {{display_name}}</h1> -->
-      <div class="media">
-        <div class="pull-left">
-          <!-- <img class="media-object" width="150" src="{{images.0.url}}" /> -->
-        </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <!-- <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd> -->
-            <!-- <dt>Id</dt><dd>{{id}}</dd> -->
-            <!-- <dt>Email</dt><dd>{{email}}</dd> -->
-            <!-- <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd> -->
-            <!-- <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd> -->
-            <!-- <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-            <dt>Country</dt><dd>{{country}}</dd> -->
-          </dl>
-        </div>
-      </div>
-    </script>
+<!-- USER PROFILE TEMPLATE HERE PLS -->
 
 <script id="oauth-template" type="text/x-handlebars-template">
       <!-- <h2>oAuth info</h2>
@@ -236,8 +246,8 @@
             userProfilePlaceholder = document.getElementById('user-profile');
 
         var oauthSource = document.getElementById('oauth-template').innerHTML,
-            oauthTemplate = Handlebars.compile(oauthSource),
-            oauthPlaceholder = document.getElementById('oauth');
+            oauthTemplate = Handlebars.compile(oauthSource); //,
+            //oauthPlaceholder = document.getElementById('oauth');
 
         var params = getHashParams();
 
@@ -250,10 +260,10 @@
         } else {
           if (access_token) {
             // render oauth info
-            oauthPlaceholder.innerHTML = oauthTemplate({
-              access_token: access_token,
-              refresh_token: refresh_token
-            });
+            // oauthPlaceholder.innerHTML = oauthTemplate({
+            //   access_token: access_token,
+            //   refresh_token: refresh_token
+            // });
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
