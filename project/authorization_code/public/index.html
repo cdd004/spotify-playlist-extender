@@ -54,6 +54,7 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="">About</a></li>
               <li><a href="">Elements</a></li>
+              <li><a href="index.html">Log Out</a></li>
           </ul>
       </nav>
   </header>
@@ -93,6 +94,7 @@
 
     <script id="user-profile-template" type="text/x-handlebars-template">
       <h1 style="color:white; margin-top:30px">Welcome, {{display_name}}</h1>
+      <!-- <a class="login_button" href = "http://localhost:8888" class="btn btn-primary">Log Out</a> -->
     </script>
 
 
@@ -123,20 +125,24 @@
       Track: {{t.name}} by {{t.artists[0].name}} <br>
       <a href={{t.uri}}> <img src="../../images/spotify-link.png" width="25px" height="25px"> </a>
       <a target="_blank" href={{t.external_urls.spotify}}> <img src="../../images/browser-link.png" width="25px" height="25px"> </a>
-      <a class="popup" onclick="myFunction({{t.mbid}})" ng-click="getSimilar(t.name, t.artists[0].name)"> <img src="../../images/similar-link.png" width="25px" height="25px">
-        <span class="popuptext" id="myPopup" +{{t.mbid}}>{{similar_response.name}}</span>
-      </a>
+      <a ng-click="myFunction(); getSimilar(t.name, t.artists[0].name)"> <img src="../../images/similar-link.png" width="25px" height="25px"></a>
+      <div ng-attr-id="{{ t.mbid }}" class="similarsong"></div>
+      
     </div>
   </div>
 
 
-<script>
+<!-- <script>
 // When the user clicks on div, open the popup
 function myFunction(id) {
-    var popup = document.getElementById('myPopup' + id);
-    popup.classList.toggle('show');
+    // var popup = document.getElementById('myPopup' + id);
+    // popup.classList.toggle('show');
+    console.log("pen15");
+    document.getElementsByClassName(similarsong).innerHTML = null;
+
+    document.getElementById(id).innerHTML = "<p>Hello World!</p>"
 }
-</script>
+</script> -->
 
 
 
