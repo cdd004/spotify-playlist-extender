@@ -33,14 +33,16 @@ app.controller('myCtrl', function($scope, $http, $compile) {
         console.log("$scope.start = " + $scope.start);
     }
 
-    $scope.getSimilar = function(track, name) {
+    $scope.getSimilar = function(track, name, id) {
         console.log('calling getSimilar()');
-        $http.get('http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+name+'&track='+track+'&api_key=&format=json')
+        $http.get('http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+name+'&track='+track+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json')
         .then(function(response) {
 
             $scope.similar_response = response.data.similartracks.track[0];
-            alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
+            //alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
         });
+        var popup = document.getElementById(id);
+        popup.classList.toggle('show');
         console.log('finished getSimilar()');
     }
 
