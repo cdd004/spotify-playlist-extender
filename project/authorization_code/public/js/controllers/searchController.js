@@ -23,18 +23,8 @@ app.controller('myCtrl', function($scope, $http, $compile) {
     //$scope.toggle = {switch:true};
     $scope.toggle = true;
     $scope.start = true;
-    $scope.similar_response = 1;
     $scope.artists = [];
     $scope.tracks = [];
-
-    $scope.myFunction = function() {
-        // var popup = document.getElementById('myPopup' + id);
-        // popup.classList.toggle('show');
-        console.log("pen15");
-        // document.getElementsByClassName(similarsong).innerHTML = null;
-
-        // document.getElementById(id).innerHTML = "<p>Hello World!</p>"
-    }
 
     $scope.toggleStart = function() {
         $scope.start = false;
@@ -48,12 +38,15 @@ app.controller('myCtrl', function($scope, $http, $compile) {
         $http.get('http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+name+'&track='+track+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json')
         .then(function(response) {
 
-            $scope.similar_response = response.data.similartracks.track[0];
-            if ($scope.similar_response == undefined) {
-                alert("Sorry! No similar song :(")
-            } else {
-            alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
-        }
+            var data = response.data.similartracks.track[0];
+
+            $scope.similar_response = data;
+            console.log($scope.similar_response);
+        //     if ($scope.similar_response == undefined) {
+        //         alert("Sorry! No similar song :(")
+        //     } else {
+        //     alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
+        // }
         });
         console.log('finished getSimilar()');
     }
