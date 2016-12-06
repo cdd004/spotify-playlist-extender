@@ -1,0 +1,3 @@
+{
+	searchfield : data		//data is the user input
+}

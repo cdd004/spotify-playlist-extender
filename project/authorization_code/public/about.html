@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+	Interphase by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Playlist Extender</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <script src="js/skel-layers.min.js"></script>
+  <script src="js/init.js"></script>
+  <noscript>
+     <link rel="stylesheet" href="css/skel.css" />
+     <link rel="stylesheet" href="css/style.css" />
+     <link rel="stylesheet" href="css/style-xlarge.css" />
+ </noscript>
+
+  <SCRIPT TYPE="text/javascript">
+  function popup(mylink, windowname) {
+    if (! window.focus)return true;
+    var href = 'similartracks.html';
+    if (typeof(mylink) == 'string') href='similartracks.html';
+    else href='similartracks.html'; 
+    window.open(href, windowname, 'width=400,height=200,scrollbars=yes'); 
+    return false; 
+  }
+  </SCRIPT>
+ <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+</head>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<div>
+   <script src="js/controllers/searchController.js"></script>
+   <body class="landing">
+
+  <div id="loggedin">
+    <div id="user-profile">
+    </div>
+    <!-- <div id="oauth">
+    </div> -->
+    <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
+      <!-- <a href="/login" class="btn btn-primary">Log out</a> -->
+  </div>
+
+    <!-- <div id="oauth"></div> -->
+
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">Spotify Enhancer</a></h1>
+        <nav id="nav">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="recentsearch.html">Recent Search</a></li>
+              <li><a href="index.html">Log Out</a></li>
+          </ul>
+        </nav>
+    </header>
+
+
+</div>
+
+<!-- One -->
+<section id="one" class="wrapper style1 align-center">
+    <div class="container">
+       <header>
+          <h2>About Us</h2>
+          <p>Learn about our team of Steven and the programmers</p>
+      </header>
+      <div class="row">
+          <section class="6u 12u$(small)" style="margin-bottom: 10px">
+             <i class="icon big rounded fa-fighter-jet"></i>
+             <p>Joe is a fourth year at Boston University who is going to be making bank right after college graduation. He likes to spend time with his cat after his classes and sometimes even meows with it. His favorite food is mac & cheese and usually spends his free time dreaming about being tied up to a tree.</p>
+         </section>
+         <section class="6u 12u$(small)" style="margin-bottom: 10px">
+             <i class="icon big rounded fa-bullhorn"></i>
+             <p>Cullen is also a senior at Boston University who travels everywhere with his Bose headphones. He enjoys tuning everyone out and loves time to himself and his music. His favorite genre are rap as well as hip & hop and thinks mainstream EDM dominate the music industry right now. Sometimes, he will walk down Comm ave and see Joe attempt to tie himself to a tree.</p>
+         </section>
+      </div>
+      <div class="row">
+         <section class="6u 12u$(small)" style="margin-bottom: 10px">
+             <i class="icon big rounded fa-car"></i>
+             <p>Just like everyone else so far, Spencer is also a fourth year at Boston University. He excels at everything computer related, from intense video gaming to coding. He is a master at making html pages as well as choosing fonts that describe people’s personality. Unfortunately for him, he never got a chance to see Joe tie himself to a tree.</p>
+         </section>
+         <section class="6u 12u$(small)" style="margin-bottom: 10px">
+             <i class="icon big rounded fa-exclamation-triangle"></i>
+             <p>Steven is the only business student in this group, studying Finance and Information Systems. He rarely has clue about what the others are talking about when they start speaking code. He has a pet bunny that he really misses back home and sometimes wish he can just become a potato. Unlike Spencer, he was fortunate enough to witness Joe tie himself to a tree once, and dreamt about getting that opportunity again ever since.</p>
+         </section>
+
+     </div>
+ </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+       <div class="row">
+          <section class="4u 6u(medium) 12u$(small)">
+             <h3>Reviews</h3>
+             <p>Check out these reviews of Spotify!</p>
+             <ul class="alt">
+                <li><a target="_blank" href="http://www.pcmag.com/article2/0,2817,2366868,00.asp">"Spotify is better than ever" - PCMag</a></li>
+                <li><a target="_blank" href="https://www.cnet.com/products/spotify/review/">"Spotify is the king of streaming music" - CNET</a></li>
+                <li><a target="_blank" href="http://www.techradar.com/reviews/pc-mac/software/utilities/other-software/spotify-526289/review">"Our favourite music streaming service by a mile" - TechRadar</a></li>
+                <li><a target="_blank" href="http://www.digitaltrends.com/music/apple-music-vs-spotify/">"The undisputed king of on-demand streaming music" - Digital Trends</a></li>
+            </ul>
+        </section>
+        <section class="4u 6u$(medium) 12u$(small)">
+         <h3>Testimonials</h3>
+         <p>See what our satisfied customers had to say about Spotify Enhancer</p>
+         <ul class="alt">
+            <li><a target="_blank" href="https://www.instagram.com/p/BA8V2QXGkewcVA2qdlBBL7YB6iHCI1RxNxRtnE0/?taken-by=ethniclightning">"I've been waiting for this day" - Joseph Cho</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/p/BAln2EEGkfgEQJYQPa-kBSYEcugB5XITIZ1YSw0/?taken-by=ethniclightning">"I was impressed" - Joseph Cho</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/p/BFkXuSemkffzfvRDMYcGQa7Z9vymkOM_cVAJM00/?taken-by=ethniclightning">"You can't fool me" - Joseph Cho</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/p/--d906mkYcNDWr4YPK31s892sJmxpcvVTsHOY0/?taken-by=ethniclightning">"Stokedd" - Joseph Cho</a></li>
+        </ul>
+    </section>
+    <section class="4u$ 12u$(medium) 12u$(small)">
+     <h3>Contact Us</h3>
+     <ul class="icons">
+        <li><a href="#" class="icon rounded fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon rounded fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon rounded fa-pinterest"><span class="label">Pinterest</span></a></li>
+        <li><a href="#" class="icon rounded fa-google-plus"><span class="label">Google+</span></a></li>
+        <li><a href="#" class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    </ul>
+    <ul class="tabular">
+        <li>
+           <h3>Address</h3>
+           726 Commonwealth Ave<br>
+           Boston, MA 02215
+       </li>
+       <li>
+           <h3>Mail</h3>
+           <a href="#">info@spotifyenhance.com</a>
+       </li>
+       <li>
+           <h3>Phone</h3>
+           (000) 000-0000
+       </li>
+   </ul>
+</section>
+</div>
+<ul class="copyright">
+  <li>&copy; Untitled. All rights reserved.</li>
+  <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+  <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+</ul>
+</div>
+</footer>
+
+<!-- USER PROFILE TEMPLATE HERE PLS -->
+  
+
+</body>
+</div>
+</div>
+</html>
