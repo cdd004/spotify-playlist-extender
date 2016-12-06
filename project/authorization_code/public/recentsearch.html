@@ -5,6 +5,11 @@
 <script src="js/controllers/searchController.js"></script>
 <script src="//code.angularjs.org/snapshot/angular-animate.js"></script>
 
+<html>
+<head>
+	<link rel="stylesheet" href="/css/similar-style.css" />
+</head>
+
 <noscript>
     <link rel="stylesheet" href="css/skel.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -21,8 +26,10 @@
 	<h4>Check out what others have searched!</h4>
 
 
-	<div class="jsonResponse_artist" ng-repeat="search in recentSearches | orderBy:'search._id':true">
-	    {{search.searchfield}}
+	<div id="recentSearches">
+		<div ng-repeat="search in recentSearches | orderBy:'search._id':true">
+	    	{{search.searchfield}}
+		</div>
 	</div>
 
 </body>
