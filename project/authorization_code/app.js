@@ -28,7 +28,7 @@ var Search = require('./models/Search'); //a searched performed by user
 
 //just a test database to learn node with
 mongoose.connect('mongodb://localhost/spotify-test');
-var index = require('./routes/index');
+var index = require('./routes/index.js');
 
 var app = express();
 
@@ -66,8 +66,8 @@ var generateRandomString = function(length) {
 
 var stateKey = 'spotify_auth_state';
 
-// app.use(express.static(__dirname + '/public'))
-//    .use(cookieParser());
+app.use(express.static(__dirname + '/public'))
+   .use(cookieParser());
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

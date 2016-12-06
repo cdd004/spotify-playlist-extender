@@ -12,8 +12,13 @@ var Search = mongoose.model('Search');
 router.get('/searches', function(req, res, next) {
 	Search.find(function(err, search) {
 		if(err) {return next(err);}
-
+		//console.log(search);
+		console.log(search);
 		res.json(search);
+		// var result =  JSON.stringify(search);
+		// console.log("this should be a massive thing:" + result);
+		// console.log("this is the type of" + typeof result);
+		// return result;
 	});
 });
 
@@ -30,3 +35,9 @@ router.post('/searches', function(req, res, next) {
 });
 
 module.exports = router;
+
+
+
+
+
+
