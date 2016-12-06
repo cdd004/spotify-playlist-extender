@@ -16,11 +16,33 @@
 <script src="js/controllers/recentSearchCtrl.js"></script>
 
 <body>
-	<h1>Recent Searches</h1>
 
-	{{recentSearches}}
+	<h1>Recent Searches</h1>
+	<h4>Check out what others have searched!</h4>
+
+
+	<div class="jsonResponse_artist" ng-repeat="search in recentSearches | orderBy:'search._id':true">
+	    {{search.searchfield}}
+	</div>
+
 </body>
 
 </div>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
