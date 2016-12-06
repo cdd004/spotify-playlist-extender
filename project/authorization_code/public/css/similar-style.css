@@ -35,3 +35,12 @@
         margin-left:30%; 
         margin-right:30%;
     }
+
+    #recentSearches {
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        column-count: 3;
+        -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+        column-gap: 10px;
+        -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+        column-rule-style: solid;
+    }
