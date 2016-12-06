@@ -22,6 +22,7 @@ app.controller('myCtrl', function($scope, $http, $compile) {
     $scope.response_unpack = "";
     //$scope.toggle = {switch:true};
     $scope.toggle = true;
+    $scope.hideHeaders = true;
     $scope.start = true;
     $scope.artists = [];
     $scope.tracks = [];
@@ -58,6 +59,7 @@ app.controller('myCtrl', function($scope, $http, $compile) {
     $scope.performSearch = function(){
 
         $scope.toggle = !$scope.toggle;
+        $scope.hideHeaders = false;
     	//format the query so that spaces match the search format
     	var query = $scope.userInput.split('').join('%20');
 

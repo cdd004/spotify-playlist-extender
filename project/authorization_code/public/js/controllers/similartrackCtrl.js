@@ -17,10 +17,29 @@ window.onload = function () {
     	if (this.readyState == 4 && this.status == 200) {
     		var data = JSON.parse(http.responseText);
             var track = data.similartracks.track[0];
-            console.log(data.similartracks.track[0]);
+            var tracks = data.similartracks.track.slice(0,5);
+            console.log(tracks);
 
-            //var similar = 
-    		document.getElementById('fmresult').innerHTML = track.name + " by " + track.artist.name; 
+            var HTMLstring = ""
+
+            HTMLstring += "<table border='1'>\n";
+            HTMLstring += "<tr>\n";
+            HTMLstring += "<th>Title</th>\n";
+            HTMLstring += "<th>Artist</th>\n";
+            HTMLstring += "</tr>\n";
+
+            for (var i = 0; i < tracks.length; i++) {
+                console.log("yes")
+                HTMLstring += "<tr>\n";
+                HTMLstring += "<td>" + tracks[i].name + "</td>\n";
+                HTMLstring += "<td>" + tracks[i].artist.name + "</td>\n";
+                HTMLstring += "<tr>\n";
+                //Do something
+            }
+
+            document.getElementById('fmresult').innerHTML += HTMLstring + "</table>";
+
+    		//document.getElementById('fmresult').innerHTML = track.name + " by " + track.artist.name; 
     	}
     }
     var url = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+data.artist_name+'&track='+data.track_name+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json';
