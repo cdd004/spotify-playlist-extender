@@ -142,7 +142,7 @@
       Track: {{t.name}} by {{t.artists[0].name}} <br>
       <a href={{t.uri}}> <img src="../../images/spotify-link.png" width="25px" height="25px"> </a>
       <a target="_blank" href={{t.external_urls.spotify}}> <img src="../../images/browser-link.png" width="25px" height="25px"> </a>
-      <form method="link" action="similartracks.html" target="_blank">
+      <form style="display:inline" method="link" action="similartracks.html" target="_blank">
         <input type="hidden" value="{{t.name}}" name="track_name">
         <input type="hidden" value="{{t.artists[0].name}}" name="artist_name">
         <input type="image" src="../../images/similar-link.png" alt="submit" width="25px" height="25px">
