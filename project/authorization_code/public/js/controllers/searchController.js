@@ -4,7 +4,6 @@ var app = angular.module('myApp', [])
     function( $compileProvider )
     {   
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|spotify):/);
-        // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
 ]);
 
@@ -20,7 +19,6 @@ app.controller('myCtrl', function($scope, $http, $compile) {
 
     $scope.userInput = "";
     $scope.response_unpack = "";
-    //$scope.toggle = {switch:true};
     $scope.toggle = true;
     $scope.hideHeaders = true;
     $scope.start = true;
@@ -43,11 +41,6 @@ app.controller('myCtrl', function($scope, $http, $compile) {
 
             $scope.similar_response = data;
             console.log($scope.similar_response);
-        //     if ($scope.similar_response == undefined) {
-        //         alert("Sorry! No similar song :(")
-        //     } else {
-        //     alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
-        // }
         });
         console.log('finished getSimilar()');
     }
@@ -68,13 +61,10 @@ app.controller('myCtrl', function($scope, $http, $compile) {
     	.then(function(response) {
 
     		console.log(response);
-    		//var.data.artists.items[0].name
-    		//var artists = response.data.artists.items;
+
             $scope.artists = response.data.artists.items;
 
-    		//var tracks = response.data.tracks.items;
             $scope.tracks = response.data.tracks.items;
-    		//console.log(tracks[0].name)
 
     		//clear the previous result
     		document.getElementsByClassName('jsonResponse').innerHTML = null;
@@ -94,29 +84,8 @@ app.controller('myCtrl', function($scope, $http, $compile) {
             //     method = "POST"
             // ).then(scb,ecb);
 
-            //UNCOMMENT LINE BELOW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             $http.post('/searches', {searchfield: data}).then(scb, ecb);
 
-
-            //-------storing search in db?
-
-            // var test = new Search({
-            //     searchfield: $scope.userInput;
-            // });
-
-            // test.save(function(err) {
-            //     if(err) throw err;
-
-            //     console.log('searched query stored');
-            // });
-
-            // Search.find({}, function(err, searches) {
-            //     if(err) throw err;
-
-            //     console.log(searches);
-            // });
-
-            //--------------------------
 
             //display all the artists 
     		// for (i = 0; i < artists.length; i++) {

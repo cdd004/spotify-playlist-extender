@@ -9,7 +9,6 @@ window.onload = function () {
     console.log(url);
     console.log(params);
     console.log(data);
-    //document.getElementById('here').innerHTML = data.business_id;
 
     var http = new XMLHttpRequest();
 
@@ -46,7 +45,6 @@ window.onload = function () {
 
             document.getElementById('fmresult').innerHTML += HTMLstring;
 
-    		//document.getElementById('fmresult').innerHTML = track.name + " by " + track.artist.name; 
     	}
     }
     var url = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+data.artist_name+'&track='+data.track_name+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json';
@@ -55,18 +53,3 @@ window.onload = function () {
 
 
 }
-
-// var url = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=';
-// $http.get('http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+name+'&track='+track+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json')
-//         .then(function(response) {
-
-//             var data = response.data.similartracks.track[0];
-
-//             $scope.similar_response = data;
-//             console.log($scope.similar_response);
-//         //     if ($scope.similar_response == undefined) {
-//         //         alert("Sorry! No similar song :(")
-//         //     } else {
-//         //     alert("Similar track: " + $scope.similar_response.name + " by " + $scope.similar_response.artist.name);
-//         // }
-//         });

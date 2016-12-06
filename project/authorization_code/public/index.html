@@ -88,7 +88,6 @@
 
     <script id="user-profile-template" type="text/x-handlebars-template">
       <h1 style="color:white; margin-top:30px">Welcome, {{display_name}}</h1>
-      <!-- <a class="login_button" href = "http://localhost:8888" class="btn btn-primary">Log Out</a> -->
     </script>
 
 
@@ -98,7 +97,6 @@
             <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput">
         </li>
         <li>
-          <!-- <button ng-click="performSearch()" class="button small">Search</button> -->
           <input type="submit" value="Search" ng-click="performSearch()" class="button small"></input>
       </li>
     </ul>
@@ -229,14 +227,8 @@
 </div>
 </footer>
 
-<!-- USER PROFILE TEMPLATE HERE PLS -->
 
 <script id="oauth-template" type="text/x-handlebars-template">
-      <!-- <h2>oAuth info</h2>
-      <dl class="dl-horizontal">
-        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-        <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
-      </dl> -->
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
@@ -278,12 +270,6 @@
           alert('There was an error during the authentication');
         } else {
           if (access_token) {
-            // render oauth info
-            // oauthPlaceholder.innerHTML = oauthTemplate({
-            //   access_token: access_token,
-            //   refresh_token: refresh_token
-            // });
-
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
                 headers: {
@@ -302,20 +288,6 @@
               $('#loggedin').hide();
           }
 
-          // document.getElementById('obtain-new-token').addEventListener('click', function() {
-          //   $.ajax({
-          //     url: '/refresh_token',
-          //     data: {
-          //       'refresh_token': refresh_token
-          //     }
-          //   }).done(function(data) {
-          //     access_token = data.access_token;
-          //     oauthPlaceholder.innerHTML = oauthTemplate({
-          //       access_token: access_token,
-          //       refresh_token: refresh_token
-          //     });
-          //   });
-          // }, false);
         }
       })();
     </script>
