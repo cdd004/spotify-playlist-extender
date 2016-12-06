@@ -9,6 +9,7 @@ window.onload = function () {
     console.log(url);
     console.log(params);
     console.log(data);
+    //document.getElementById('here').innerHTML = data.business_id;
 
     var http = new XMLHttpRequest();
 
@@ -48,6 +49,7 @@ window.onload = function () {
     	}
     }
     var url = 'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist='+data.artist_name+'&track='+data.track_name+'&api_key=f0350f9a208dcf2dbd6e8b1b56d53d22&format=json';
+
     http.open("GET", url, true);
     http.send();
 
