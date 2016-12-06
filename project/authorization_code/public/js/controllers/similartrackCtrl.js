@@ -22,22 +22,29 @@ window.onload = function () {
 
             var HTMLstring = ""
 
-            HTMLstring += "<table border='1'>\n";
-            HTMLstring += "<tr>\n";
-            HTMLstring += "<th>Title</th>\n";
-            HTMLstring += "<th>Artist</th>\n";
-            HTMLstring += "</tr>\n";
+            if (tracks.length == 0) {
+                HTMLstring = "No Similar Songs Found :("
+            } else {
 
-            for (var i = 0; i < tracks.length; i++) {
-                console.log("yes")
+                HTMLstring += "<table border='1'>\n";
                 HTMLstring += "<tr>\n";
-                HTMLstring += "<td>" + tracks[i].name + "</td>\n";
-                HTMLstring += "<td>" + tracks[i].artist.name + "</td>\n";
-                HTMLstring += "<tr>\n";
-                //Do something
+                HTMLstring += "<th>Title</th>\n";
+                HTMLstring += "<th>Artist</th>\n";
+                HTMLstring += "</tr>\n";
+
+                for (var i = 0; i < tracks.length; i++) {
+                    HTMLstring += "<tr>\n";
+                    HTMLstring += "<td>" + tracks[i].name + "</td>\n";
+                    HTMLstring += "<td>" + tracks[i].artist.name + "</td>\n";
+                    HTMLstring += "<tr>\n";
+                    //Do something
+                }
+
+                HTMLstring += "</table>";
+
             }
 
-            document.getElementById('fmresult').innerHTML += HTMLstring + "</table>";
+            document.getElementById('fmresult').innerHTML += HTMLstring;
 
     		//document.getElementById('fmresult').innerHTML = track.name + " by " + track.artist.name; 
     	}
