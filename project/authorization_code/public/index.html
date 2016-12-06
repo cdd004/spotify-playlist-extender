@@ -121,6 +121,10 @@
 
 </section>
 
+<div class="jsonResponse">
+
+<h2 ng-hide="toggle">Artists</h2>
+
 <div class="jsonResponse_artist" ng-repeat="a in artists">
     <!-- {{userInput}} -->
     <div>
@@ -130,6 +134,8 @@
     </div>
 
 </div>
+
+<h2 ng-hide="toggle">Tracks</h2>
 
   <div class="jsonResponse_tracks" ng-repeat="t in tracks">
     <div>
@@ -150,6 +156,7 @@
       
     </div>
   </div>
+</div>
 
 
 <!-- <script>
