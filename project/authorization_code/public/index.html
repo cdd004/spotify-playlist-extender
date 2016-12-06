@@ -92,15 +92,17 @@
     </script>
 
 
-
+    <form>
     <ul class="actions">
         <li>
             <input type="text" name="search" placeholder="Search for a song/artist" ng-model="userInput">
         </li>
         <li>
-          <button ng-click="performSearch()" class="button small">Search</button>
+          <!-- <button ng-click="performSearch()" class="button small">Search</button> -->
+          <input type="submit" value="Search" ng-click="performSearch()" class="button small"></input>
       </li>
     </ul>
+    </form>
 
 </section>
 
@@ -148,7 +150,7 @@
     <div class="container">
        <header>
           <h2>What can you do here?</h2>
-          <p>Check out these features to effortlessly add new music to your Spotify playlists</p>
+          <p>Check out these features to effortlessly add new music to your personal Spotify library</p>
       </header>
       <div class="row 200%">
           <section class="4u 12u$(small)">
@@ -157,11 +159,13 @@
          </section>
          <section class="4u 12u$(small)">
              <i class="icon big rounded fa-search"></i>
-             <p>Quickly find new music based on songs and artists in your current playlists</p>
+             <p>Quickly find new tracks and artists based on any key words</p>
+             <!-- <p>Quickly find new music based on songs and artists in your current playlists</p> -->
          </section>
          <section class="4u$ 12u$(small)">
              <i class="icon big rounded fa-play-circle"></i>
-             <p>Listen to your new playlists and easily export your new playlist back to Spotify</p>
+             <p>Listen to the music you find, we'll provide direct links there</p>
+             <!-- <p>Listen to your new playlists and easily export your new playlist back to Spotify</p> -->
          </section>
      </div>
  </div>

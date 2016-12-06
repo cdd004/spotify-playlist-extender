@@ -8,8 +8,15 @@ app.controller('myCtrl', function($scope, $http) {
 
 		//response.data[i].searchfield <-- syntax for accessing searches
 
-		for (i = 0; i < response.data.length; i++) {
-			$scope.recentSearches.push(response.data[i]);
+		//cap it off at the 50 most recent searches
+		if (response.data.length <= 50) {
+			for (i = 0; i < response.data.length; i++) {
+				$scope.recentSearches.push(response.data[i]);
+			}
+		} else {
+			for (i = 0; i < 50; i++) {
+				$scope.recentSearches.push(response.data[i]);
+			}
 		}
     }
 
