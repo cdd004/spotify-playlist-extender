@@ -105,6 +105,17 @@
                 font-size: 1.25em;
             }
 
+        #header h2 {
+            color: #ffffff;
+            height: inherit;
+            left: 2.5em;
+            line-height: inherit;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+        }
+
         #header nav {
             height: inherit;
             line-height: inherit;
